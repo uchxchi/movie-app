@@ -1,0 +1,29 @@
+.card-container {
+  display: grid;
+  grid-template-columns: 30% 30% 33%;
+  gap: 2rem;
+}
+
+.reviewFilter {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 3rem;
+}
+
+.button {
+  width: 13rem;
+  height: 3rem;
+  background-color: rgba(22, 22, 236, 0.822);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  width: 13rem;
+  height: 2.5rem;
+}
