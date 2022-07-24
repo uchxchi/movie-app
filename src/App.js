@@ -10,7 +10,7 @@ function App() {
        <div>
         <Routes>
           <Route 
-          path='/movie/:movieId'
+          path='/movies/:id'
           element={<SingleMovie />}
           />
 

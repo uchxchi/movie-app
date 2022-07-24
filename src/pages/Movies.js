@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './movies.css'
 import { Card } from '../components/card'
+import { Link } from 'react-router-dom'
 
 export const Movies = () => {
   const [movie, setMovie] = useState([])
@@ -30,7 +31,16 @@ export const Movies = () => {
 
       <div className='card-container'>
         {movie.map((movie) => {
-          return <Card movie={movie} />
+          return  (
+          
+              <Link key={movie.id} to={`/movies/${movie.id}`}>
+                  <Card movie={movie} />
+              </Link>
+    
+           
+            
+          )
+       
         })}
       </div>
     </div>
