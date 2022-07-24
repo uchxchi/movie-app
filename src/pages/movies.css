@@ -21,6 +21,10 @@
   border-radius: 8px 8px 8px;
 }
 
+.button:hover{
+  background-color: rgb(10, 69, 245);
+}
+
 h1 {
   text-align: center;
 }
