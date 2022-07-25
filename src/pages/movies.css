@@ -1,0 +1,58 @@
+.card-container {
+  display: grid;
+  grid-template-columns: 30% 30% 33%;
+  gap: 2rem;
+}
+
+.reviewFilter {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 3rem;
+  
+}
+
+.button {
+  width: 13rem;
+  height: 3rem;
+  background-color: rgba(22, 22, 236, 0.822);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: capitalize;
+  border-radius: 8px 8px 8px;
+}
+
+.button:hover{
+  background-color: rgb(10, 69, 245);
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  width: 13rem;
+  height: 2.5rem;
+}
+
+
+
+@media (max-width: 480px){
+  .card-container {
+      display: grid;
+      grid-template-columns: 100%;
+      gap: 0rem;
+    }
+}
+
+@media (max-width: 448px){
+  .reviewFilter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 3rem;
+    }
+
+    .button{
+      margin-bottom: 1rem;
+    }
+}
