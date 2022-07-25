@@ -4,6 +4,7 @@ import './movies.css'
 import { Card } from '../components/card'
 import { Link } from 'react-router-dom'
 
+
 export const Movies = () => {
   const [movie, setMovie] = useState([])
 
@@ -25,7 +26,11 @@ export const Movies = () => {
       </header>
 
       <div className='reviewFilter'>
-        <button className='button'>Add new review</button>
+
+        <Link to='/movies/reviews'>
+          <button className='button'>Add new review</button>
+        </Link>
+      
         <input name='filter' type='text' placeholder='filter' />
       </div>
 
