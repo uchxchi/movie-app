@@ -33,7 +33,7 @@ export const Movies = () => {
         {movie.map((movie) => {
           return  (
           
-              <Link key={movie.id} to={`/movies/${movie.id}`}>
+              <Link key={movie.id} to={`/movies/${movie._id}`}>
                   <Card movie={movie} />
               </Link>
     

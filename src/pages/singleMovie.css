@@ -1,0 +1,47 @@
+ h2{
+    font-size: 3rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+img{  
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 20%;
+      height: 20%;
+      padding-bottom: 2rem;
+}
+
+p{
+    display: block;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.headerDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+.editBtn{
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    background-color: rgb(20, 20, 36);
+    color: white;
+    width: 5rem;
+    height: 3rem;
+    
+}
+
+.deleteBtn{
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+        background-color: white;
+        color: rgb(20, 20, 36);
+        width: 5rem;
+        height: 3rem;
+    
+}
