@@ -1,0 +1,36 @@
+h3{
+    text-align: center;
+    padding-bottom: 2rem;
+}
+.formInput{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.imgLink{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    
+}
+
+.review{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+label{
+    padding-bottom: 0.5rem;
+    padding-right: 8rem;
+}
+
+button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
