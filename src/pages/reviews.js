@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from 'react-router-dom'
 import './reviews.css'
 
 export default function MovieReview (props){
@@ -7,8 +8,10 @@ export default function MovieReview (props){
         submit,
         change,
         formErrors,
-        setFormErrors,
+        
     } = props
+
+    const navigate = useNavigate()
 
     const onChange = (evt) => {
         const {name, value} = evt.target
@@ -17,6 +20,7 @@ export default function MovieReview (props){
     const onSubmit = (evt) => {
         evt.preventDefault()
         submit()
+        navigate('/')
     }
    
     return(
