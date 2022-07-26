@@ -9,4 +9,3 @@ export const Card = ({ movie }) => {
     </div>
   )
 }
-
