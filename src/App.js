@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Movies } from './pages/Movies'
 import { Route, Routes} from 'react-router-dom'
@@ -37,8 +37,7 @@ function App() {
    const addMovieReview = (newReview) => {
     axios.post('https://uchxchi-movies.herokuapp.com/api/movies/', newReview)
     .then(res => {
-      console.log(res.data)
-
+      
     })
     .catch(res => {
 
@@ -64,6 +63,8 @@ function App() {
       setFormValue(initialFormValue)
       addMovieReview(newReviews)
     }
+
+  
 
   return (
     <div>

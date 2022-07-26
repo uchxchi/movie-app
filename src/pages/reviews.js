@@ -22,11 +22,13 @@ export default function MovieReview (props){
         submit()
         navigate('/')
     }
+
+    
    
     return(
         <div>
             <h3>CREATE NEW REVIEW</h3>
-           <form onSubmit={onSubmit}>
+           <form className="form" onSubmit={onSubmit}>
 
             <div>
                 <p>{formErrors.title}</p>
@@ -70,7 +72,7 @@ export default function MovieReview (props){
                 />
             </div>
 
-            <button>ADD REVIEW</button>
+            <button className="formButton" disabled={!formValue.title || !formValue.image_url || !formValue.review}>ADD REVIEW</button>
 
            
            </form>

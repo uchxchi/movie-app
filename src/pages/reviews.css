@@ -29,8 +29,49 @@ label{
     padding-right: 8rem;
 }
 
-button{
+ label + input{
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: groove;
+        background-color: #eee;
+        width: 25rem;
+        text-align: center;
+        border-top-style: hidden;
+        
+}
+
+textarea{
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    border-top-style: hidden;
+    background-color: #eee;
+    width: 25rem;
+    text-align: center;
+        
+}
+
+ .formButton{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    line-height: 2.5;
+    padding: 5px 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: black;
+    background-image:
+        linear-gradient(to top left,
+        rgba(0, 0, 0, .2),
+        rgba(0, 0, 0, .2) 30%,
+        rgba(0, 0, 0, 0));
+    box-shadow:
+     inset 2px 2px 3px rgb(255 255 255 / 60%),
+     inset -2px -2px 3px rgb(0 0 0 / 60%);
+}
+.formButton:hover{
+    background-color: rgb(1, 1, 17);
 }
