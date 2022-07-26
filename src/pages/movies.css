@@ -8,7 +8,6 @@
   display: flex;
   justify-content: space-around;
   padding-bottom: 3rem;
-  
 }
 
 .button {
@@ -21,7 +20,7 @@
   border-radius: 8px 8px 8px;
 }
 
-.button:hover{
+.button:hover {
   background-color: rgb(10, 69, 245);
 }
 
@@ -34,25 +33,23 @@ input {
   height: 2.5rem;
 }
 
-
-
-@media (max-width: 480px){
+@media (max-width: 480px) {
   .card-container {
-      display: grid;
-      grid-template-columns: 100%;
-      gap: 0rem;
-    }
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 0rem;
+  }
 }
 
-@media (max-width: 448px){
+@media (max-width: 448px) {
   .reviewFilter {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-bottom: 3rem;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+  }
 
-    .button{
-      margin-bottom: 1rem;
-    }
+  .button {
+    margin-bottom: 1rem;
+  }
 }
