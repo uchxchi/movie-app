@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 
 export const Movies = () => {
   const [movie, setMovie] = useState([])
-
   useEffect(() => {
     axios
       .get('https://uchxchi-movies.herokuapp.com/api/movies/')
@@ -19,6 +18,7 @@ export const Movies = () => {
   if (!movie) {
     return <div>loading...</div>
   }
+
   return (
     <div className='container'>
       <header>
