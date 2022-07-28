@@ -55,13 +55,24 @@ export default function MovieReview(props) {
       .catch((res) => {})
   }
 
+  const updateMovieReview = (id, newReview) => {
+    axios
+      .put(`https://uchxchi-movies.herokuapp.com/api/movies/${id}`, newReview)
+      .then((res) => {
+        setFormValue(initialFormValue)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
   const submit = (evt) => {
     const newReviews = {
       title: formValue.title.trim(),
       image_url: formValue.image_url.trim(),
       review: formValue.review,
     }
-    addMovieReview(newReviews)
+    data ? updateMovieReview(data._id, newReviews) : addMovieReview(newReviews)
   }
 
   const onChange = (evt) => {
