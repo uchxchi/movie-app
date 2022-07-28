@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import './reviews.css'
 import * as yup from 'yup'
 import Schema from '../components/formSchema'
@@ -18,7 +18,9 @@ const initialFormErrors = {
 
 export default function MovieReview(props) {
   const { movieReviews, setMovieReviews } = props
-  const [formValue, setFormValue] = useState(initialFormValue)
+  const location = useLocation()
+  const data = location.state
+  const [formValue, setFormValue] = useState(data ? data : initialFormValue)
   const [formErrors, setFormErrors] = useState(initialFormErrors)
 
   const navigate = useNavigate()
@@ -53,13 +55,30 @@ export default function MovieReview(props) {
       .catch((res) => {})
   }
 
+  const updateMovieReview = (id, newReview) => {
+    axios
+      .put(`https://uchxchi-movies.herokuapp.com/api/movies/${id}`, newReview)
+      .then((res) => {
+        // let indexOfReview = movieReviews.findIndex(
+        //   (review) => review._id === id
+        // ) // find the index
+        // let editedReviews = movieReviews // copy the array into new array
+        // editedReviews[indexOfReview] = res.data // updating the array
+        // setMovieReviews(editedReviews)
+        setFormValue(initialFormValue)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
   const submit = (evt) => {
     const newReviews = {
       title: formValue.title.trim(),
       image_url: formValue.image_url.trim(),
       review: formValue.review,
     }
-    addMovieReview(newReviews)
+    data ? updateMovieReview(data._id, newReviews) : addMovieReview(newReviews)
   }
 
   const onChange = (evt) => {
