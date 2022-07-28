@@ -36,18 +36,20 @@ export default function SingleMovie() {
   }
 
   return (
-    <div>
+    <div className='main-container'>
       <div className='headerDiv'>
         <h2>{title}</h2>
-        <Link to='/movies/reviews' state={singleMovie}>
-          <button className='editBtn'>Edit</button>
-        </Link>
-        <button onClick={deleteMovie} className='deleteBtn'>
-          Delete
-        </button>
+        <div className='button-container'>
+          <Link to='/movies/reviews' state={singleMovie}>
+            <button className='editBtn'>Edit</button>
+          </Link>
+          <button onClick={deleteMovie} className='deleteBtn'>
+            Delete
+          </button>
+        </div>
       </div>
 
-      <div className='container'>
+      <div className='container-single'>
         <img src={image_url} alt='movie' />
         <p>{review}</p>
       </div>
