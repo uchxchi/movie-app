@@ -12,7 +12,6 @@ export default function SingleMovie() {
     axios
       .get(`https://uchxchi-movies.herokuapp.com/api/movies/${id}`)
       .then((res) => {
-        console.log(res.data)
         setSingleMovie(res.data)
       })
       .catch((err) => {})
@@ -27,7 +26,7 @@ export default function SingleMovie() {
     <div>
       <div className='headerDiv'>
         <h2>{title}</h2>
-        <Link to='/movies/reviews'>
+        <Link to='/movies/reviews' state={singleMovie}>
           <button className='editBtn'>Edit</button>
         </Link>
         <button className='deleteBtn'>Delete</button>
