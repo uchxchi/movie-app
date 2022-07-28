@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import './singleMovie.css'
 
 export default function SingleMovie() {
   const [singleMovie, setSingleMovie] = useState()
   const { id } = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     axios
@@ -22,6 +23,18 @@ export default function SingleMovie() {
   }
 
   const { title, review, image_url } = singleMovie
+
+  const deleteMovie = () => {
+    axios
+      .delete(`https://uchxchi-movies.herokuapp.com/api/movies/${id}`)
+      .then((res) => {
+        navigate('/')
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
   return (
     <div>
       <div className='headerDiv'>
@@ -29,7 +42,9 @@ export default function SingleMovie() {
         <Link to='/movies/reviews' state={singleMovie}>
           <button className='editBtn'>Edit</button>
         </Link>
-        <button className='deleteBtn'>Delete</button>
+        <button onClick={deleteMovie} className='deleteBtn'>
+          Delete
+        </button>
       </div>
 
       <div className='container'>
