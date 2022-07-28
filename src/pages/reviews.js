@@ -59,6 +59,12 @@ export default function MovieReview(props) {
     axios
       .put(`https://uchxchi-movies.herokuapp.com/api/movies/${id}`, newReview)
       .then((res) => {
+        // let indexOfReview = movieReviews.findIndex(
+        //   (review) => review._id === id
+        // ) // find the index
+        // let editedReviews = movieReviews // copy the array into new array
+        // editedReviews[indexOfReview] = res.data // updating the array
+        // setMovieReviews(editedReviews)
         setFormValue(initialFormValue)
       })
       .catch((err) => {
