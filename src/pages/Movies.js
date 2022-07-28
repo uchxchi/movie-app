@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 export const Movies = () => {
   const [movie, setMovie] = useState([])
+  const [searchString, setSearchString] = useState('')
   useEffect(() => {
     axios
       .get('https://uchxchi-movies.herokuapp.com/api/movies/')
@@ -18,6 +19,17 @@ export const Movies = () => {
     return <div>loading...</div>
   }
 
+  const onChange = (evt) => {
+    const { value } = evt.target
+    setSearchString(value)
+  }
+
+  let filtered = movie.filter(
+    (movie) => movie.title.toLowerCase() === searchString.toLowerCase()
+  )
+
+  let renderedArray = filtered.length > 0 ? filtered : movie
+
   return (
     <div className='container'>
       <header>
@@ -29,11 +41,16 @@ export const Movies = () => {
           <button className='button'>Add new review</button>
         </Link>
 
-        <input name='filter' type='text' placeholder='filter' />
+        <input
+          onChange={onChange}
+          name='filter'
+          type='text'
+          placeholder='filter'
+        />
       </div>
 
       <div className='card-container'>
-        {movie.map((movie) => {
+        {renderedArray.map((movie) => {
           return (
             <Link key={movie.id} to={`/movies/${movie._id}`}>
               <Card movie={movie} />
